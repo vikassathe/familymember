@@ -1,0 +1,83 @@
+
+
+
+<script>
+$(document).ready(
+  
+  /* This is the function that will get executed after the DOM is fully loaded */
+  function () {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,//this option for allowing user to select month
+      changeYear: true, //this option for allowing user to select from year range
+	yearRange: "1900:+nn",
+onSelect: function(selected,evnt) {
+         agefinding(selected);
+    }
+
+
+
+    });
+  }
+
+);
+
+
+function agefinding()
+    {
+        var birthDay = document.getElementById("datepicker").value;
+        var DOB = new Date(birthDay);
+        var today = new Date();
+        var age = today.getTime() - DOB.getTime();
+        age = Math.floor(age / (1000 * 60 * 60 * 24 * 365.25));
+
+
+    document.getElementById('age').value = age;
+
+        //return age;
+    }
+
+</script>
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+<h1>Editing article</h1>
+ 
+<%= form_for :familymember, url: familymember_path(@familymember), method: :patch do |f| %>
+
+<table border=1>
+ <tr>
+	<td><%= f.label :Name %></td>
+	<td><%= f.text_field :name %></td>
+</tr>
+
+ <tr>
+
+    	<td><%= f.label :Gender %></td>
+	<td><%= f.select :gender, options_for_select(%w[Male Female]) %></td>
+
+</tr>
+
+<tr>
+  <td>  <%= f.label :Birth_Date %></td>
+  <td><%= f.date_field :birth_date, :id => "datepicker"  %></td>
+</tr>
+  
+<tr>
+  <td><%= f.label :Age %></td>
+   <td> <%= f.text_field :age, :id=>"age" , :readonly=>"true"%></td>
+</tr>
+
+
+<tr>
+    <td><%= f.label :Description %></td>
+    <td><%= f.text_area :description %></td>
+</tr>
+</table>
+
+<%=button_tag"Save", :onclick =>"return validation();",:class=>"button" %>
+
+<a href="/familymembers/"><button type="button" class="button" >Cancel</button></a>
+
+
+
+<% end %>
+

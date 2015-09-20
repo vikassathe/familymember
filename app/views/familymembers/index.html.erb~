@@ -1,0 +1,27 @@
+<h1>Listing Family members</h1>
+ <%= link_to 'New Family Member', new_familymember_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Birth_Date</th>
+    <th>Age</th>
+    <th>Description</th>
+  </tr>
+ 
+  <% @familymember.each do |familymember| %>
+    <tr>
+      <td><%= familymember.name %></td>
+      <td><%= familymember.gender %></td>
+      <td><%= familymember.birth_date%></td>
+      <td><%= familymember.age%></td>
+      <td><%= familymember.description %></td>
+
+      <td><%= link_to 'Show', familymember_path(familymember) %></td>
+      <td><%= link_to 'Edit', edit_familymember_path(familymember) %></td>
+
+      <td><%= link_to 'Destroy', familymember_path(familymember),method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+ </tr>
+  <% end %>
+</table>

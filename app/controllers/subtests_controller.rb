@@ -1,0 +1,2 @@
+class SubtestsController < ApplicationController
+end
