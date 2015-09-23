@@ -7,11 +7,12 @@ Rails.application.routes.draw do
 
    resources :familymembers
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+   root 'familymembers#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 #new routes  
+ post 'familymembers' => 'familymembers#create' 
  get  'familymembers/new' => 'familymembers#new'
  get  'familymembers/:id/edit' => 'familymembers#edit'
  get  'familymembers/:id'=> 'familymembers#show'
