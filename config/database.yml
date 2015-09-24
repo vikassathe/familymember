@@ -46,9 +46,8 @@ test:
 production:
  adapter: postgresql
  encoding: utf8
- database: db
- User: 'root'
- password: rss@123
- Host: 172.17.42.1
- Port: 32811
+ database: spree_development
+ username: root
+ password: $DB_PASSWORD
+
 
