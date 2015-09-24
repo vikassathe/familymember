@@ -49,5 +49,5 @@ production:
  database: familymember-db
  username: postgres
  password: rss@123
- host: localhost
+
 
