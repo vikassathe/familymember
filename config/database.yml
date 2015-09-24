@@ -46,8 +46,9 @@ test:
 production:
  adapter: postgresql
  encoding: utf8
- database: familymember-db
- username: postgres
+ database: db
+ User: 'root'
  password: rss@123
-
+ Host: 172.17.42.1
+ Port: 32811
 
