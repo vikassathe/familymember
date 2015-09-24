@@ -33,6 +33,5 @@ production:
   pool: 5
   host: localhost
   username: username
-  password: rss@123
-
+  password: root
 
