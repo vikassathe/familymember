@@ -47,7 +47,7 @@ production:
  adapter: postgresql
  encoding: utf8
  database: spree_development
- username: root
+ username: postgres
  password: rss@123
 
 
