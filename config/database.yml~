@@ -48,6 +48,6 @@ production:
  encoding: utf8
  database: spree_development
  username: root
- password: $DB_PASSWORD
+ password: rss@123
 
 
