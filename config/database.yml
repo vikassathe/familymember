@@ -43,11 +43,3 @@ test:
  host: localhost
 
 
-production:
- adapter: postgresql
- encoding: utf8
- database: spree_development
- username: root
- password: rss@123
-
-
